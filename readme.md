@@ -1,122 +1,111 @@
-📄 ATS-Inspired Resume Intelligence & Ranking System
+# 🏆 ATS-Inspired Resume Intelligence & Ranking System
 
-A full-stack, ATS-inspired resume intelligence system that parses resumes (PDF/DOCX), extracts structured information using NLP, and ranks candidates against a given Job Description (JD) using an explainable, weighted ATS scoring mechanism.
+A **full-stack, ATS-inspired resume intelligence system** that parses resumes (PDF/DOCX), extracts structured information using NLP, and ranks resumes against a given Job Description (JD) using an **explainable, weighted ATS scoring mechanism**.
 
-This project mimics how real Applicant Tracking Systems (ATS) evaluate resumes by combining rule-based logic, NLP techniques, and classical ML, deployed as a RESTful backend with a clean frontend UI.
+This project mimics how **real Applicant Tracking Systems (ATS)** evaluate candidates by combining **rule-based logic, NLP techniques, and classical machine learning**, deployed using a REST-based backend and a clean frontend UI.
 
-🚀 Features
+---
 
-📂 Upload resumes in PDF or DOCX
+## 🚀 Features
 
-🧠 Extract structured information:
+- 📂 Upload resumes in **PDF or DOCX**
+- 🧠 Extract structured information:
+  - Email
+  - Phone Number
+  - Years of Experience
+  - Skills
+- 🔀 Hybrid NLP pipeline:
+  - Regex for deterministic fields
+  - SpaCy NLP for skill extraction
+- 📊 Job-specific **ATS relevance score (0–100)**
+- 🔍 Semantic similarity between Resume & Job Description (TF-IDF + cosine similarity)
+- 🖥️ Clean frontend UI (no Streamlit)
+- 🌐 RESTful Flask backend
+- ☁️ Deployment-ready architecture
 
-Email
+---
 
-Phone number
+## 🏗️ System Architecture
 
-Years of experience
+Resume (PDF/DOCX)
+│
+▼
+Text Extraction (pdfplumber / python-docx)
+│
+▼
+Regex + NLP (SpaCy)
+│
+▼
+Feature Extraction
+│
+▼
+Resume ↔ Job Description Comparison
+│
+▼
+Weighted ATS Scoring Engine
+│
+▼
+Final ATS Score (0–100)
 
-Skills
 
-🧩 Hybrid NLP pipeline:
+---
 
-Regex for deterministic fields
+## 🛠️ Tech Stack
 
-SpaCy NLP for skill extraction
+### Backend
+- Python
+- Flask (REST API)
+- SpaCy (NLP)
+- Regex
+- Scikit-learn (TF-IDF, Cosine Similarity)
+- pdfplumber (PDF parsing)
+- python-docx (DOCX parsing)
+- Gunicorn (Production server)
 
-📊 Job-specific ATS relevance score (0–100)
+### Frontend
+- HTML
+- CSS
+- JavaScript (Fetch API)
 
-🔍 Semantic similarity between Resume & JD (TF-IDF + cosine similarity)
+### Deployment
+- Backend: Render
+- Frontend: Netlify
 
-🖥️ Clean frontend UI (no Streamlit)
+---
 
-🌐 REST-based Flask backend
+## 📊 ATS Scoring Logic
 
-☁️ Deployment-ready architecture
+The ATS score is **fully explainable and rule-based**, inspired by real-world ATS systems:
 
-🏗️ System Architecture
-Resume (PDF/DOCX) ──► Text Extraction
-                          │
-                          ▼
-                 Regex + NLP (SpaCy)
-                          │
-                          ▼
-                 Feature Extraction
-                          │
-                          ▼
-            Resume ↔ Job Description Comparison
-                          │
-                          ▼
-              Weighted ATS Scoring Engine
-                          │
-                          ▼
-                    Final ATS Score
+| Component            | Weight |
+|----------------------|--------|
+| Skill Match          | 40%    |
+| Experience Match     | 30%    |
+| Semantic Similarity  | 10%    |
+| Baseline / Education | 20%    |
 
-🛠️ Tech Stack
-Backend
+> ⚠️ No black-box deep learning is used for final decision-making.  
+> The system prioritizes **interpretability, robustness, and realism**.
 
-Python
+---
 
-Flask (REST API)
+## 🧠 NLP & ML Concepts Used
 
-SpaCy (NLP)
+- Resume document parsing
+- Regular Expressions for structured data extraction
+- Natural Language Processing (SpaCy)
+- Skill keyword matching
+- TF-IDF Vectorization
+- Cosine Similarity
+- Explainable rule-based scoring systems
 
-Regex
+---
 
-Scikit-learn (TF-IDF, cosine similarity)
+## 🖥️ How to Run Locally
 
-pdfplumber (PDF parsing)
-
-python-docx (DOCX parsing)
-
-Gunicorn (production server)
-
-Frontend
-
-HTML
-
-CSS
-
-JavaScript (Fetch API)
-
-Deployment
-
-Backend: Render
-
-Frontend: Netlify (static hosting)
-
-📊 ATS Scoring Logic
-
-The final ATS score is explainable and weighted, inspired by real ATS systems:
-
-Component	Weight
-Skill Match	40%
-Experience Match	30%
-Semantic Similarity	10%
-Baseline / Education	20%
-
-⚠️ No black-box deep learning is used for final decision-making.
-The system prioritizes interpretability and robustness, similar to real hiring systems.
-
-🧠 NLP & ML Concepts Used
-
-Resume document parsing
-
-Regular Expressions for structured data extraction
-
-Natural Language Processing (SpaCy)
-
-Skill keyword matching
-
-TF-IDF Vectorization
-
-Cosine Similarity
-
-Explainable rule-based scoring systems
-
-🖥️ How to Run Locally
-1️⃣ Clone the repository
-git clone https://github.com/your-username/ATS-Resume-Intelligence.git
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/Atharva130/ATS-Resume-Intelligence.git
 cd ATS-Resume-Intelligence
 
 2️⃣ Create & activate virtual environment
@@ -155,15 +144,15 @@ Response
 
 🎯 Why This Project Stands Out
 
-Goes beyond resume parsing by implementing ATS-style ranking
+Implements ATS-style ranking, not just resume parsing
 
-Fully job-specific, not a generic score
+Job-specific relevance scoring
 
 End-to-end system (backend + frontend + deployment)
 
-Focuses on explainability, not black-box ML
+Explainable logic instead of black-box ML
 
-Highly relevant to HR tech, AI, and real-world ML systems
+Highly relevant to AI, NLP, and HR-tech systems
 
 🔮 Future Enhancements
 
@@ -181,4 +170,4 @@ Multi-resume ranking
 
 Atharva Rahate
 B.Tech – Computer Technology
-Interest Areas: AI, Machine Learning, NLP
+Interests: AI, Machine Learning, NLP, Full-Stack Development
