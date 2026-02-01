@@ -103,7 +103,7 @@ The ATS score is **fully explainable and rule-based**, inspired by real-world AT
 
 ## 🖥️ How to Run Locally
 
-### 1️⃣ Clone the repository
+ 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/Atharva130/ATS-Resume-Intelligence.git
 cd ATS-Resume-Intelligence
